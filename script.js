@@ -18,6 +18,53 @@ document.addEventListener("DOMContentLoaded", () => {
   const sections = document.querySelectorAll("section[id]");
   const revealItems = document.querySelectorAll(".reveal");
 
+  // ===== ABOUT ANIMATION =====
+
+const progressBars = document.querySelectorAll(".progress-fill");
+const counterNumbers = document.querySelectorAll(".count-number");
+
+const aboutObserver = new IntersectionObserver(
+  (entries, observer) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+
+      // progress bar fill
+      progressBars.forEach((bar) => {
+        bar.classList.add("animate");
+      });
+
+      // number counter
+      counterNumbers.forEach((counter) => {
+        const target = parseInt(counter.dataset.target, 10);
+        let count = 0;
+
+        const updateCount = () => {
+          count += Math.ceil(target / 40);
+          if (count < target) {
+            counter.textContent = count;
+            setTimeout(updateCount, 30);
+          } else {
+            counter.textContent = target;
+          }
+        };
+
+        updateCount();
+      });
+
+      observer.disconnect();
+    });
+  },
+  { threshold: 0.3 }
+);
+
+// observe about section
+const aboutSection = document.querySelector(".about-content");
+if (aboutSection) {
+  aboutObserver.observe(aboutSection);
+}
+
+  
+
   const galleryImages = [
     "images/gallery-1.jpg",
     "images/gallery-2.jpg",

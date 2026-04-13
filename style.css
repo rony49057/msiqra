@@ -1176,3 +1176,248 @@ body.dark .navbar {
     height: 280px;
   }
 }
+
+.about-stats {
+  display: flex;
+  gap: 30px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+.about-stats div {
+  background: var(--bg-2);
+  padding: 18px 24px;
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  text-align: center;
+  transition: 0.3s;
+}
+
+.about-stats div:hover {
+  transform: translateY(-5px);
+}
+
+.about-stats h3 {
+  color: var(--primary);
+  font-size: 1.6rem;
+}
+
+.about-stats p {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.about-image {
+  position: relative;
+}
+
+.about-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(11,138,109,0.08);
+  opacity: 0;
+  transition: 0.4s;
+}
+
+.about-image:hover::after {
+  opacity: 1;
+}
+
+.about-features div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.about-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin: 28px 0 24px;
+}
+
+.about-stat-card {
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 22px 18px;
+  text-align: center;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.about-stat-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(11, 138, 109, 0.1),
+    transparent
+  );
+  opacity: 0;
+  transition: 0.4s ease;
+}
+
+.about-stat-card:hover::before {
+  opacity: 1;
+}
+
+.about-stat-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 24px 50px rgba(11, 138, 109, 0.16);
+}
+
+.about-stat-card h3 {
+  font-size: 2rem;
+  line-height: 1;
+  margin-bottom: 8px;
+  color: var(--primary);
+}
+
+.about-stat-card p {
+  margin: 0;
+  color: var(--muted);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.about-progress {
+  margin: 8px 0 26px;
+  display: grid;
+  gap: 16px;
+}
+
+.progress-item {
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 16px 18px;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+}
+
+.progress-item:hover {
+  transform: translateY(-4px);
+}
+
+.progress-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.progress-top span:last-child {
+  color: var(--primary);
+}
+
+.progress-bar {
+  width: 100%;
+  height: 10px;
+  border-radius: 999px;
+  background: rgba(11, 138, 109, 0.12);
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 0;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  transition: width 1.4s ease;
+}
+
+.progress-fill.fill-95.animate {
+  width: 95%;
+}
+
+.progress-fill.fill-92.animate {
+  width: 92%;
+}
+
+.progress-fill.fill-90.animate {
+  width: 90%;
+}
+
+.about-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+  justify-content: center; /* 🔥 center */
+  align-items: center;
+}
+
+.about-image {
+  position: relative;
+  overflow: hidden;
+}
+
+.about-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(11, 138, 109, 0.08),
+    transparent 45%,
+    rgba(242, 194, 48, 0.08)
+  );
+  opacity: 0;
+  transition: 0.4s ease;
+  pointer-events: none;
+}
+
+.about-image:hover::after {
+  opacity: 1;
+}
+
+.about-features div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+@media (max-width: 860px) {
+  .about-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .about-actions {
+    flex-direction: column;
+  }
+
+  .about-actions .btn {
+    width: 100%;
+  }
+}
+
+
+body::before {
+  content: "";
+  position: fixed;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(11,138,109,0.15), transparent);
+  top: 20%;
+  left: 20%;
+  filter: blur(80px);
+  z-index: 0;
+  pointer-events: none;
+  animation: floatGlow 10s infinite alternate ease-in-out;
+}
+
+@keyframes floatGlow {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(200px, 150px);
+  }
+}
