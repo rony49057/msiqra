@@ -284,3 +284,25 @@ const year = document.getElementById("year");
 if (year) {
   year.textContent = new Date().getFullYear();
 }
+
+// HERO SLIDER
+const heroImages = [
+  "images/hero.png",
+  "images/hero2.png",
+  "images/hero3.png",
+  "images/hero4.png",
+  "images/hero5.png",
+  "images/hero6.png"
+
+
+];
+
+let heroIndex = 0;
+const heroSlide = document.getElementById("heroSlide");
+
+function changeHeroImage() {
+  heroIndex = (heroIndex + 1) % heroImages.length;
+  heroSlide.src = heroImages[heroIndex];
+}
+
+setInterval(changeHeroImage, 3000);
