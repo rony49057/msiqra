@@ -1140,6 +1140,7 @@ body.dark .navbar {
   align-items: center;
   justify-content: center;
   background: var(--bg-2);
+  margin-top: 40px;
 }
 
 /* Image control */
@@ -1149,6 +1150,14 @@ body.dark .navbar {
   object-fit: contain; /* 🔥 no crop */
   object-position: center;
   transition: all 0.5s ease;
+}
+
+.hero-content {
+  margin-bottom: 20px;
+}
+
+.hero-slider {
+  margin-top: 30px;
 }
 
 /* Hover effect */
