@@ -1404,3 +1404,66 @@ body.dark .navbar {
 .footer-dev-link:hover {
   opacity: 0.8;
 }
+
+
+
+.section-pill {
+  display: inline-block;
+  padding: 6px 16px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+
+  background: rgba(11, 138, 109, 0.12);
+  color: var(--primary);
+
+  border: 1px solid var(--border);
+  margin-bottom: 12px;
+}
+
+.hero-content h2 {
+  font-size: clamp(1.4rem, 3vw, 2.6rem);
+  margin-bottom: 16px;
+}
+
+.main-title {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+   font-family: 'Oswald', sans-serif;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+
+  background: linear-gradient(90deg, var(--primary-dark), var(--primary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  transition: all 0.35s ease;
+}
+
+/* 🔥 hover effect */
+.main-title:hover {
+  transform: translateY(-5px) scale(1.02);
+  text-shadow: 0 10px 25px rgba(11, 138, 109, 0.3);
+}
+
+.main-title {
+  position: relative;
+  display: inline-block;
+}
+
+.main-title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0%;
+  height: 3px;
+  background: var(--primary);
+  transition: 0.3s ease;
+}
+
+.main-title:hover::after {
+  width: 100%;
+}
