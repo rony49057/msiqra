@@ -1381,3 +1381,14 @@ body.dark .navbar {
     display: none;
   }
 }
+
+/* Owner name Facebook link */
+.owner-name-link {
+  transition: 0.3s ease;
+  position: relative;
+  z-index: 5;
+}
+
+.owner-name-link:hover {
+  color: var(--primary);
+}
