@@ -1392,3 +1392,15 @@ body.dark .navbar {
 .owner-name-link:hover {
   color: var(--primary);
 }
+
+/* Developer link style */
+.footer-dev-link {
+  font-weight: 700;
+  color: #ffffff;
+  text-decoration: underline;
+  transition: 0.3s ease;
+}
+
+.footer-dev-link:hover {
+  opacity: 0.8;
+}
