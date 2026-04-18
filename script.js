@@ -105,6 +105,8 @@ if (aboutSection) {
 "images/gallery-36.jpeg",
 "images/gallery-37.jpeg",
 "images/gallery-38.jpeg",
+"images/gallery-39.jpg"
+
 
   ];
 
